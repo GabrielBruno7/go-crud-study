@@ -21,7 +21,7 @@ func (r *RestErr) Error() string {
 	return r.Message
 }
 
-func newRestErr(message, err string, code int, log []Log) *RestErr{
+func NewRestErr(message, err string, code int, log []Log) *RestErr{
 	return &RestErr{
 		Message: message,
 		Err: err,
@@ -30,7 +30,7 @@ func newRestErr(message, err string, code int, log []Log) *RestErr{
 	}
 }
 
-func newBadRequestValidadeError(message string, log []Log) *RestErr {
+func NewBadRequestValidadeError(message string, log []Log) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err: "bad request",
@@ -39,7 +39,7 @@ func newBadRequestValidadeError(message string, log []Log) *RestErr {
 	}
 }
 
-func newBadRequestError(message string) *RestErr {
+func NewBadRequestError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err: "bad request",
@@ -47,7 +47,7 @@ func newBadRequestError(message string) *RestErr {
 	}
 }
 
-func newInternalServerError(message string) *RestErr {
+func NewInternalServerError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err: "internal server error",
@@ -55,7 +55,7 @@ func newInternalServerError(message string) *RestErr {
 	}
 }
 
-func newNotFoundError(message string) *RestErr {
+func NewNotFoundError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err: "not found",
@@ -63,7 +63,7 @@ func newNotFoundError(message string) *RestErr {
 	}
 }
 
-func newForbiddenError(message string) *RestErr {
+func NewForbiddenError(message string) *RestErr {
 	return &RestErr{
 		Message: message,
 		Err: "not found",
